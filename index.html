@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Ceria Kelas 1 - Mengenal Hijaiyah & Bilangan</title>
+  
+  <!-- Font Google Khusus Anak & Kaligrafi Arab Jelas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- CSS Utama -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background Ornamen Balon & Awan Ceria -->
+  <div class="sky-decor" aria-hidden="true">
+    <span class="cloud cloud-1">☁️</span>
+    <span class="cloud cloud-2">☁️</span>
+    <span class="cloud cloud-3">⛅</span>
+    <span class="star-float star-1">✨</span>
+    <span class="star-float star-2">⭐</span>
+    <span class="star-float star-3">🌟</span>
+  </div>
+
+  <!-- Header & Toolbar Kelas -->
+  <header class="app-header">
+    <div class="header-container">
+      
+      <!-- Brand & Maskot -->
+      <div class="brand-group">
+        <div class="mascot-badge" id="mascotBubble" title="Halo teman-teman! Selamat belajar!">
+          <span class="mascot-emoji">⭐</span>
+          <span class="mascot-pulse"></span>
+        </div>
+        <div class="brand-text">
+          <span class="app-tag">Media Interaktif Kelas 1 MI / SD</span>
+          <h1 class="app-title">Belajar Ceria!</h1>
+        </div>
+      </div>
+
+      <!-- Pemilih Topik Pelajaran Ceria (Hijaiyah vs Bilangan) -->
+      <nav class="topic-switcher" aria-label="Pilihan Materi Pelajaran">
+        <button id="btnTopicHijaiyah" class="topic-btn active" onclick="switchTopic('hijaiyah')">
+          <span class="btn-icon">🕌</span>
+          <span class="btn-label">Huruf Hijaiyah & Fathah</span>
+        </button>
+        <button id="btnTopicBilangan" class="topic-btn" onclick="switchTopic('bilangan')">
+          <span class="btn-icon">🔢</span>
+          <span class="btn-label">Bilangan 1 - 10</span>
+        </button>
+      </nav>
+
+      <!-- Alat Bantu Guru & Kelas -->
+      <div class="classroom-tools">
+        <!-- Skor Bintang -->
+        <div class="star-counter" id="starCounter" title="Bintang yang sudah kamu kumpulkan!">
+          <span class="star-icon">⭐</span>
+          <span id="starCountDisplay">0</span>
+        </div>
+        <!-- Tombol Suara -->
+        <button id="btnSoundToggle" class="tool-btn" onclick="handleToggleSound()" title="Nyalakan / Matikan Suara" aria-label="Toggle Suara">
+          <span id="soundIcon">🔊</span>
+        </button>
+        <!-- Mode Proyektor Layar Penuh -->
+        <button id="btnFullscreen" class="tool-btn" onclick="handleToggleFullscreen()" title="Layar Penuh Proyektor Kelas" aria-label="Mode Layar Penuh">
+          <span id="fullscreenIcon">🖥️</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main-content">
+    
+    <!-- Hero Banner Materi -->
+    <section class="hero-banner" id="heroBanner">
+      <div class="hero-card">
+        <div class="hero-content">
+          <span class="hero-badge" id="heroBadge">🔤 Kelas 1 MI - Al-Qur'an Hadis</span>
+          <h2 class="hero-title" id="heroTitle">Mengenal Huruf Hijaiyah & Harakat Fathah</h2>
+          <p class="hero-desc" id="heroDesc">Mari belajar membaca huruf Hijaiyah berharakat Fathah dengan riang dan ceria!</p>
+          <div class="hero-actions">
+            <a href="#bagian-kartu" class="btn-3d btn-primary btn-bounce">
+              <span>👉 Mulai Belajar Kartu</span>
+            </a>
+            <a href="#bagian-kuis" class="btn-3d btn-secondary">
+              <span>🎮 Main Tebak Cepat</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-mascot-box">
+          <div class="big-mascot-avatar" id="heroEmoji">🕌</div>
+          <div class="hero-bubble-dialog">
+            <p id="heroSpeechBubble">"Klik kartu di bawah untuk melihat cara baca dan bunyinya ya!"</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BAGIAN 1: KARTU BELAJAR INTERAKTIF (6 KARTU MATERI DASAR) -->
+    <section class="section-container" id="bagian-kartu">
+      <div class="section-header">
+        <div class="section-title-wrapper">
+          <span class="section-number">Bagian 1</span>
+          <h2 class="section-title">🃏 Kartu Belajar Interaktif</h2>
+        </div>
+        <p class="section-subtitle">
+          Sentuh atau klik <strong>6 kartu ajaib</strong> di bawah ini untuk melihat cara baca, contoh seru, dan mendengarkan suaranya!
+        </p>
+      </div>
+
+      <!-- Grid 6 Kartu Interaktif -->
+      <div class="cards-grid" id="cardsGrid" role="list">
+        <!-- Kartu di-render dinamis oleh app.js -->
+      </div>
+    </section>
+
+    <!-- BAGIAN 2: PERMAINAN TEBAK CEPAT (5 SOAL PILIHAN SEDERHANA) -->
+    <section class="section-container" id="bagian-kuis">
+      <div class="section-header">
+        <div class="section-title-wrapper">
+          <span class="section-number">Bagian 2</span>
+          <h2 class="section-title">🎮 Permainan Tebak Cepat</h2>
+        </div>
+        <p class="section-subtitle">
+          Uji ketangkasanmu! Pilih <strong>1 dari 3 tombol besar</strong> dengan tepat. Kumpulkan 5 bintang kejora!
+        </p>
+      </div>
+
+      <!-- Wadah Permainan Interaktif -->
+      <div class="quiz-wrapper" id="quizWrapper">
+        
+        <!-- Bar Status Kuis -->
+        <div class="quiz-status-bar">
+          <div class="quiz-step-info">
+            <span class="step-label">Tantangan Soal:</span>
+            <span class="step-badge" id="quizProgressText">Soal 1 dari 5</span>
+          </div>
+
+          <!-- Indikator 5 Bintang Kuis -->
+          <div class="quiz-stars-track" id="quizStarsTrack" aria-label="Progress Bintang Soal">
+            <div class="quiz-star-item" id="starSlot-0">⭐</div>
+            <div class="quiz-star-item" id="starSlot-1">⭐</div>
+            <div class="quiz-star-item" id="starSlot-2">⭐</div>
+            <div class="quiz-star-item" id="starSlot-3">⭐</div>
+            <div class="quiz-star-item" id="starSlot-4">⭐</div>
+          </div>
+
+          <button class="btn-restart-small" onclick="restartQuiz()" title="Ulangi Permainan dari awal">
+            🔄 Ulangi Permainan
+          </button>
+        </div>
+
+        <!-- Kartu Pertanyaan 3D Berukuran Besar -->
+        <div class="question-card-3d" id="questionCard">
+          <div class="question-top">
+            <span class="question-tag" id="questionTag">Pertanyaan Nomor 1</span>
+            <button class="btn-sound-question" onclick="speakCurrentQuestion()" title="Bacakan Soal Ini">
+              🔊 Bacakan Soal
+            </button>
+          </div>
+          <h3 class="question-text" id="questionText">
+            <!-- Teks soal akan dimuat dinamis -->
+          </h3>
+          <div class="question-hint-box" id="questionHintBox" style="display: none;">
+            <span class="hint-icon">💡</span>
+            <span class="hint-text" id="questionHintText">Petunjuk Guru...</span>
+          </div>
+        </div>
+
+        <!-- 3 Pilihan Jawaban Berbentuk Tombol Besar -->
+        <div class="options-container" id="quizOptionsContainer">
+          <!-- 3 Tombol Jawaban di-generate oleh app.js -->
+        </div>
+
+        <!-- Area Umpan Balik Ramah Anak (Pesan Semangat & Petunjuk Lembut) -->
+        <div class="feedback-container" id="feedbackContainer" style="display: none;">
+          <div class="feedback-card" id="feedbackCard">
+            <div class="feedback-icon" id="feedbackIcon">🎉</div>
+            <div class="feedback-text-group">
+              <h4 class="feedback-title" id="feedbackTitle">Hebat! Jawabanmu Benar!</h4>
+              <p class="feedback-message" id="feedbackMessage">Kamu sungguh pintar dan teliti!</p>
+            </div>
+            <div class="feedback-actions" id="feedbackActions">
+              <button id="btnFeedbackNext" class="btn-3d btn-success" onclick="nextQuestion()">
+                <span>Lanjut Soal Berikutnya ➡️</span>
+              </button>
+              <button id="btnFeedbackRetry" class="btn-3d btn-retry" onclick="retryCurrentQuestion()" style="display: none;">
+                <span>Coba Lagi Yuk! 💪</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layar Rapor Bintang Akhir (Setelah 5 Soal) -->
+        <div class="quiz-results-card" id="quizResultsCard" style="display: none;">
+          <div class="trophy-badge">🏆</div>
+          <h3 class="results-title" id="resultsTitle">Luar Biasa, Kamu Juara!</h3>
+          <p class="results-desc" id="resultsDesc">Kamu telah menyelesaikan seluruh tantangan dengan sangat baik!</p>
+          
+          <div class="final-stars-display" id="finalStarsDisplay">
+            <!-- Bintang hasil akhir -->
+          </div>
+
+          <div class="score-pill" id="scorePill">
+            Skor Bintang: <strong id="finalScoreVal">5 / 5</strong>
+          </div>
+
+          <div class="results-btn-group">
+            <button class="btn-3d btn-primary" onclick="restartQuiz()">
+              <span>🔄 Mainkan Lagi</span>
+            </button>
+            <button class="btn-3d btn-secondary" onclick="toggleOtherTopic()">
+              <span>📚 Coba Pelajaran Lainnya</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL DETAIL KARTU BELAJAR INTERAKTIF -->
+  <div class="card-modal-overlay" id="cardModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="card-modal-backdrop" onclick="closeCardModal()"></div>
+    <div class="card-modal-content">
+      
+      <button class="modal-close-btn" onclick="closeCardModal()" aria-label="Tutup Detail Kartu">✖</button>
+      
+      <div class="modal-header-badge" id="modalBadge">Materi Dasar Hijaiyah</div>
+
+      <div class="modal-body">
+        
+        <!-- Simbol Raksasa & Tombol Suara -->
+        <div class="modal-symbol-box" id="modalSymbolBox">
+          <div class="modal-big-symbol" id="modalBigSymbol">اَ</div>
+          <button class="btn-pronounce" id="modalBtnSound" onclick="speakModalSymbol()" title="Klik untuk mendengar suara!">
+            <span class="pronounce-icon">🔊</span>
+            <span class="pronounce-label">Dengarkan Bunyi</span>
+          </button>
+        </div>
+
+        <!-- Rincian Informasi Ceria -->
+        <div class="modal-info-box">
+          <h3 class="modal-card-name" id="modalCardName">Alif Fathah</h3>
+          
+          <div class="info-row highlight-row">
+            <span class="info-label">🗣️ Cara Membaca:</span>
+            <span class="info-value reading-highlight" id="modalReading">Dibaca: A</span>
+          </div>
+
+          <div class="info-row">
+            <span class="info-label">💡 Tips / Makhraj Mudah:</span>
+            <span class="info-value" id="modalMakhraj">Buka mulutmu lebar-lebar dengan santai!</span>
+          </div>
+
+          <div class="example-showcase" id="modalExampleBox">
+            <span class="example-emoji" id="modalExampleEmoji">🍍</span>
+            <div class="example-details">
+              <span class="example-title">Contoh Kata:</span>
+              <strong class="example-word" id="modalExampleWord">Ananasun (Nanas)</strong>
+              <span class="example-sub" id="modalExampleIndo">Ayam & Nanas Segar</span>
+            </div>
+          </div>
+
+          <div class="funfact-box">
+            <span class="funfact-icon">🌟</span>
+            <p class="funfact-text" id="modalFunFact">Fakta seru materi...</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigasi Bawah Modal (Sebelumnya / Selanjutnya) -->
+      <div class="modal-footer-nav">
+        <button class="nav-modal-btn" id="btnPrevCard" onclick="navCard(-1)">
+          ⬅️ Kartu Sebelumnya
+        </button>
+        <button class="btn-3d btn-primary" onclick="closeCardModal()">
+          Selesai Belajar 👍
+        </button>
+        <button class="nav-modal-btn" id="btnNextCard" onclick="navCard(1)">
+          Kartu Selanjutnya ➡️
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Kanvas Confetti Perayaan Mandiri (Tanpa Eksternal Dependency) -->
+  <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+  <!-- Footer Hangat Kelas -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p class="footer-note">
+        ✨ <strong>Media Pembelajaran Interaktif Kelas 1 MI / SD</strong> • Dirancang khusus dengan tampilan 3D ceria, font besar, ramah proyektor kelas, dan umpan balik penyemangat anak.
+      </p>
+      <p class="footer-credit">
+        Dibuat oleh <a href="https://github.com/MohAzmii04" target="_blank">Mohammad Azmi Abdussyukur</a>
+      <div class="footer-shortcuts">
+        <span>💡 Tips Guru: Gunakan tombol <strong>🖥️ Layar Penuh</strong> saat menampilkan di LCD Proyektor kelas!</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Data, Audio Engine & Logika Interaktif -->
+  <script src="js/data.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
