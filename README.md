@@ -1,7 +1,7 @@
 # 🌟 Website Belajar Ceria - Kelas 1 MI & SD
 
 Aplikasi web pembelajaran interaktif satu halaman (Single Page Application) yang ceria, ramah anak, dan **siap pakai di ruang kelas** untuk siswa Kelas 1 Madrasah Ibtidaiyah (MI) dan Sekolah Dasar (SD).
-
+*https://materibelajarkelas1.netlify.app/*
 Mendukung dua topik pembelajaran yang dapat dipilih secara fleksibel oleh guru:
 1. **🔤 Mengenal Huruf Hijaiyah & Harakat Fathah** (*Al-Qur'an Hadis Kelas 1 MI*)
 2. **🔢 Mengenal Bilangan 1 sampai 10** (*Matematika Ceria Kelas 1 SD/MI*)
